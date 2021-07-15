@@ -39,5 +39,10 @@ module.exports = {
       template: './src/index.html',
       hash: true
     })
-  ]
+  ],
+  devServer: {
+    contentBase: './dist',
+    historyApiFallback: true
+  }
+
 }
