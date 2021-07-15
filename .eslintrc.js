@@ -1,3 +1,9 @@
+const RULES = {
+  WARNING: 'warning',
+  ERROR: 'error',
+  OFF: 'off'
+}
+
 module.exports = {
   env: {
     browser: true,
@@ -19,5 +25,6 @@ module.exports = {
     'react'
   ],
   rules: {
+    'no-undef': RULES.OFF
   }
 }
