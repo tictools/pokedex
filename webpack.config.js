@@ -1,5 +1,5 @@
 const path = require('path')
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const babelRules = {
   test: /\.js$/,
@@ -10,33 +10,33 @@ const babelRules = {
 const cssRules = {
   test: /\.css$/,
   use: [
-    "style-loader",
+    'style-loader',
     {
-      loader: "css-loader",
+      loader: 'css-loader',
       options: {
         modules: {
-          localIdentName: "[name]__[local]--[hash:base64:5]",
+          localIdentName: '[name]__[local]--[hash:base64:5]'
         },
-        importLoaders: 1,
-      },
+        importLoaders: 1
+      }
     },
-    "postcss-loader",
-  ],
+    'postcss-loader'
+  ]
 }
 
 module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'app.[contenthash].js',
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [babelRules, cssRules]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Pokédex",
-      template: "./src/index.html",
+      title: 'Pokédex',
+      template: './src/index.html',
       hash: true
     })
   ]
