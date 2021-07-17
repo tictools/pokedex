@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import Button from "../../components/Button/Button";
+import ButtonBar from "../../components/ButtonBar/ButtonBar";
+import ItemsList from "../../components/ItemsList/ItemsList";
 
 import {
   BASE_URL,
@@ -55,17 +57,11 @@ export default function PokemonList({ page, handleChangePage }) {
         "loading..."
       ) : (
         <>
-          <ul>{content}</ul>
-          <Button
-            label="Previous"
-            handleClick={handlePrevious}
-            status={pageStatus.previous}
-          />
-          <p>{page + 1}</p>
-          <Button
-            label="Next"
-            handleClick={handleNext}
-            status={pageStatus.next}
+          <ItemsList>{content}</ItemsList>
+          <ButtonBar
+            handlePrevious={handlePrevious}
+            handleNext={handleNext}
+            status={pageStatus}
           />
         </>
       )}
