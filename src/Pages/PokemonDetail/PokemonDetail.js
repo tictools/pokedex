@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 
-import ItemsList from "../../components/ItemsList/ItemsList";
 import { BASE_URL } from "../../common/constants";
+import ItemsList from "../../components/ItemsList/ItemsList";
+import ExternalImage from "../../components/ExternalImage/ExternalImage";
 
 const PokemonDetail = (props) => {
   const [pokemon, setPokemon] = useState(undefined);
@@ -28,10 +29,6 @@ const PokemonDetail = (props) => {
     pokemon.types &&
     pokemon.types.map((type) => <li key={type.slot}>{type.type.name}</li>);
 
-  const onLoadImage = () => {
-    console.log("loaded");
-  };
-
   return (
     <div>
       {loading ? (
@@ -39,9 +36,8 @@ const PokemonDetail = (props) => {
       ) : (
         <div>
           <h2>{pokemon.name}</h2>
-          <img
+          <ExternalImage
             src={pokemon.sprites.other.dream_world.front_default}
-            onLoad={onLoadImage}
             alt={pokemon.name}
           />
           <p>Number of moves: {pokemon.moves.length}</p>
