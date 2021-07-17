@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
 import ButtonBar from "../../components/ButtonBar/ButtonBar";
 import FilterBar from "../../components/FilterBar/FilterBar";
 import ItemsList from "../../components/ItemsList/ItemsList";
+import ItemList from "../../components/ItemList/ItemList";
 import Loader from "../../components/Loader/Loader";
 import usePokemons from "../../hooks/usePokemons";
 
@@ -29,11 +29,7 @@ export default function PokemonList({ page, handleChangePage }) {
     pokemons &&
     pokemons.map((pokemon) => {
       const id = getIdFromBaseUrl(pokemon.url, BASE_URL);
-      return (
-        <li key={id}>
-          <Link to={`/detail/${id}`}>{pokemon.name}</Link>
-        </li>
-      );
+      return <ItemList key={id} id={id} name={pokemon.name} />;
     });
 
   const filteredPokemons = getFilteredPokemons(pokemons, filterPokemons);
