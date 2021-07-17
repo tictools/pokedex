@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 
+import ItemsList from "../../components/ItemsList/ItemsList";
 import { BASE_URL } from "../../common/constants";
 
 const PokemonDetail = (props) => {
@@ -45,7 +46,7 @@ const PokemonDetail = (props) => {
           />
           <p>Number of moves: {pokemon.moves.length}</p>
           <p>ID: {idPokemon}</p>
-          <div>Types: {<ul>{types}</ul>}</div>
+          <div>Types: {<ItemsList>{types}</ItemsList>}</div>
         </div>
       )}
       <Link to="/">back</Link>
