@@ -62,6 +62,7 @@ export default function PokemonList({ page, handleChangePage }) {
             handlePrevious={handlePrevious}
             handleNext={handleNext}
             status={pageStatus}
+            page={page}
           />
         </>
       )}
