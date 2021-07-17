@@ -1,5 +1,7 @@
 import React from "react";
 
 export default function ItemsList({ children }) {
-  return <ul>{children}</ul>;
+  console.log(children.length);
+  const content = children.length ? children : <p>No values</p>;
+  return <ul>{content}</ul>;
 }
