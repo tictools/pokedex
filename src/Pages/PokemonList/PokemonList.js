@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import Button from "../../components/Button/Button";
 import ButtonBar from "../../components/ButtonBar/ButtonBar";
 import ItemsList from "../../components/ItemsList/ItemsList";
 
@@ -10,7 +9,7 @@ import {
   EMPTY_ARRAY,
   INITIAL_PAGINATION_STATUS_VALUE,
 } from "../../common/constants";
-import { getIdFromBaseUrl, getCurrentPage } from "../../common/utils";
+import { getIdFromBaseUrl, getCurrentOffset } from "../../common/utils";
 
 export default function PokemonList({ page, handleChangePage }) {
   const [loading, setLoading] = useState(true);
@@ -19,9 +18,9 @@ export default function PokemonList({ page, handleChangePage }) {
 
   useEffect(() => {
     const fetchPokemons = () => {
-      const currentPage = getCurrentPage(page);
+      const currentOffset = getCurrentOffset(page);
       setLoading(true);
-      fetch(`${BASE_URL}?offset=${currentPage}&limit=10`)
+      fetch(`${BASE_URL}?offset=${currentOffset}&limit=10`)
         .then((response) => response.json())
         .then(({ results, previous, next }) => {
           setPokemons(results);
