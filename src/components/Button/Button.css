@@ -1,0 +1,9 @@
+.button__pagination {
+  color: red;
+  cursor: pointer;
+}
+
+.button__pagination--disabled {
+  cursor: none;
+  pointer-events: none;
+}
