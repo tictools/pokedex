@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Loader from "../Loader/Loader";
 
 export default function ExternalImage({ src, alt }) {
   const [loadingImg, setLoadingImg] = useState(true);
@@ -10,7 +11,7 @@ export default function ExternalImage({ src, alt }) {
   return (
     <>
       <img src={src} onLoad={onLoadImage} alt={alt} />
-      {loadingImg && <p>LOADING IMAGE!!!</p>}
+      {loadingImg && <Loader />}
     </>
   );
 }

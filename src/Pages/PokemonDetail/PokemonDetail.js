@@ -3,8 +3,10 @@ import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 
 import { BASE_URL } from "../../common/constants";
-import ItemsList from "../../components/ItemsList/ItemsList";
 import ExternalImage from "../../components/ExternalImage/ExternalImage";
+import ItemsList from "../../components/ItemsList/ItemsList";
+import Loader from "../../components/Loader/Loader";
+import DetailCard from "../../components/DetailCard/DetailCard";
 
 const PokemonDetail = (props) => {
   const [pokemon, setPokemon] = useState(undefined);
@@ -31,20 +33,7 @@ const PokemonDetail = (props) => {
 
   return (
     <div>
-      {loading ? (
-        "loading"
-      ) : (
-        <div>
-          <h2>{pokemon.name}</h2>
-          <ExternalImage
-            src={pokemon.sprites.other.dream_world.front_default}
-            alt={pokemon.name}
-          />
-          <p>Number of moves: {pokemon.moves.length}</p>
-          <p>ID: {idPokemon}</p>
-          <div>Types: {<ItemsList>{types}</ItemsList>}</div>
-        </div>
-      )}
+      {loading ? <Loader /> : <DetailCard id={idPokemon} pokemon={pokemon} />}
       <Link to="/">back</Link>
     </div>
   );

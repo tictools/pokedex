@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import ButtonBar from "../../components/ButtonBar/ButtonBar";
 import ItemsList from "../../components/ItemsList/ItemsList";
+import Loader from "../../components/Loader/Loader";
 
 import {
   BASE_URL,
@@ -53,7 +54,7 @@ export default function PokemonList({ page, handleChangePage }) {
     <div>
       <h2>Pokemon List</h2>
       {loading ? (
-        "loading..."
+        <Loader />
       ) : (
         <>
           <ItemsList>{content}</ItemsList>
