@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import PokemonList from "../Pages/PokemonList/PokemonList";
+import PokemonList from "../pages/PokemonList/PokemonList";
 import { PokemonDetailWithRouter as PokemonDetail } from "../Pages/PokemonDetail/PokemonDetail";
 
 import { PAGINATION } from "../common/constants";
