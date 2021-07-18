@@ -1,0 +1,17 @@
+.reset{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  font-family: 'Courier New', Courier, monospace;
+  margin: 1rem auto;
+  width: 560px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  text-align: center
+}

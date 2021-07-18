@@ -7,6 +7,8 @@ import ItemList from "../../components/ItemList/ItemList";
 import Loader from "../../components/Loader/Loader";
 import usePokemons from "../../hooks/usePokemons";
 
+import styles from "./PokemonList.css";
+
 import { BASE_URL, EMPTY_STRING } from "../../common/constants";
 import { getIdFromBaseUrl } from "../../common/utils";
 
@@ -36,8 +38,8 @@ export default function PokemonList({ page, handleChangePage }) {
   const formattedPokemons = getFormattedPokemons(filteredPokemons);
 
   return (
-    <div>
-      <h2>Pokemon List</h2>
+    <section className={styles.container}>
+      <h2 className={styles.header}>Pokemon List</h2>
       {loading ? (
         <Loader />
       ) : (
@@ -52,6 +54,6 @@ export default function PokemonList({ page, handleChangePage }) {
           />
         </>
       )}
-    </div>
+    </section>
   );
 }

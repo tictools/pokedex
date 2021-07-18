@@ -1,0 +1,11 @@
+.container {
+  width: 100%
+}
+
+.input {
+  box-sizing: border-box;
+  height: 50px;
+  font-size: 1.25rem;
+  padding: 1.5rem;
+  width: 100%;
+}
