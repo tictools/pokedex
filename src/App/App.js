@@ -15,7 +15,6 @@ export const App = () => {
   }
 
   return (
-    <div className={styles.reset}>
       <main className={styles.container}>
         <h1 className={styles.header}>Pokédex</h1>
         <Router>
@@ -29,6 +28,5 @@ export const App = () => {
           </Switch>
         </Router>
       </main>
-    </div>
   )
 }

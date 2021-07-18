@@ -3,8 +3,8 @@ import styles from './Button.css'
 
 export default function Button ({ label, handleClick, status }) {
   const buttonClassName = status
-    ? styles.button__pagination
-    : styles['button__pagination--disabled']
+    ? `${styles.button__pagination}`
+    : [styles.button__pagination, styles['button__pagination--disabled']].join(' ')
 
   return (
     <button className={buttonClassName} onClick={handleClick}>

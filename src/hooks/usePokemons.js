@@ -4,7 +4,8 @@ import { getCurrentOffset } from '../common/utils'
 import {
   BASE_URL,
   EMPTY_ARRAY,
-  INITIAL_PAGINATION_STATUS_VALUE
+  INITIAL_PAGINATION_STATUS_VALUE,
+  PAGINATION
 } from '../common/constants'
 
 export default function usePokemons (page) {
@@ -16,7 +17,7 @@ export default function usePokemons (page) {
     const fetchPokemons = () => {
       const currentOffset = getCurrentOffset(page)
       setLoading(true)
-      fetch(`${BASE_URL}?offset=${currentOffset}&limit=10`)
+      fetch(`${BASE_URL}?offset=${currentOffset}&limit=${PAGINATION.LIMIT}`)
         .then((response) => response.json())
         .then(({ results, previous, next }) => {
           setPokemons(results)

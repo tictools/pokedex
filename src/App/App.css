@@ -1,17 +1,18 @@
-.reset{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .container{
-  font-family: 'Courier New', Courier, monospace;
-  margin: 1rem auto;
-  width: 560px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 1rem auto 1rem;
+  padding: 2rem;
+  width: 760px;
 }
 
 .header {
-  text-align: center
+  background-color: rgba(0,0,0,.01);
+  border-top: 1px dotted rgba(0,0,0,.5); ;
+  border-bottom: 1px dotted rgba(0,0,0,.5);
+  padding: 1rem 0;
+  text-align: center;
+  width: 100%;
 }

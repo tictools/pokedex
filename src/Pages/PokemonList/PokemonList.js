@@ -38,24 +38,24 @@ export default function PokemonList ({ page, handleChangePage }) {
   const formattedPokemons = getFormattedPokemons(filteredPokemons)
 
   return (
-    <section className={styles.container}>
-      <h2 className={styles.header}>Pokemon List</h2>
+    <section className={styles.wrapper}>
+      <div className={styles.container}>
+        <h2 className={styles.header}>Pokemon List</h2>
       {loading
-        ? (
-        <Loader />
-          )
+        ? <Loader />
         : (
-        <>
+          <>
           <FilterBar handleFilter={handleFilterChange} />
           <ItemsList>{formattedPokemons}</ItemsList>
-          <ButtonBar
+            </>
+          )}
+          </div>
+          {!loading && <ButtonBar
             handlePrevious={handlePrevious}
             handleNext={handleNext}
             status={pageStatus}
             page={page}
-          />
-        </>
-          )}
+            />}
     </section>
   )
 }
