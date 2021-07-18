@@ -6,7 +6,8 @@ export const EMPTY_ARRAY = []
 
 export const PAGINATION = {
   INITIAL_VALUE: 0,
-  OFFSET: 10
+  OFFSET: 9,
+  LIMIT: 9
 }
 
 export const INITIAL_PAGINATION_STATUS_VALUE = {

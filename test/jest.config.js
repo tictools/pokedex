@@ -1,6 +1,6 @@
 module.exports = {
   bail: false,
-  collectCoverage: true,
+  collectCoverage: false,
   testPathIgnorePatterns: ['/src/common/models/__tests__/mocks/'],
   coveragePathIgnorePatterns: ['-mock.js'],
   moduleNameMapper: {

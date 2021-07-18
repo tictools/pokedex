@@ -6,7 +6,7 @@ describe('given a page', () => {
   const page = 1
   describe('when initial value and offset are defined as constants', () => {
     test('then should return correct offset and type', () => {
-      const EXPECTED_RESULT = 10
+      const EXPECTED_RESULT = 9
 
       const result = getCurrentOffset(page)
       expect(result).toBe(EXPECTED_RESULT)
