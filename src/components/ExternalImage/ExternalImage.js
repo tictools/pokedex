@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import Loader from "../Loader/Loader";
+import React, { useState } from 'react'
+import Loader from '../Loader/Loader'
 
-export default function ExternalImage({ src, alt }) {
-  const [loadingImg, setLoadingImg] = useState(true);
+export default function ExternalImage ({ src, alt }) {
+  const [loadingImg, setLoadingImg] = useState(true)
 
   const onLoadImage = () => {
-    setLoadingImg(false);
-  };
+    setLoadingImg(false)
+  }
 
   return (
     <>
       <img src={src} onLoad={onLoadImage} alt={alt} />
       {loadingImg && <Loader />}
     </>
-  );
+  )
 }

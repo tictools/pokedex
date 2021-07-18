@@ -1,14 +1,14 @@
-import React from "react";
-import ExternalImage from "../ExternalImage/ExternalImage";
-import ItemsList from "../ItemsList/ItemsList";
+import React from 'react'
+import ExternalImage from '../ExternalImage/ExternalImage'
+import ItemsList from '../ItemsList/ItemsList'
 
-export default function DetailCard({ id, pokemon }) {
+export default function DetailCard ({ id, pokemon }) {
   const getTypes = () =>
     pokemon &&
     pokemon.types &&
-    pokemon.types.map((type) => <li key={type.slot}>{type.type.name}</li>);
+    pokemon.types.map((type) => <li key={type.slot}>{type.type.name}</li>)
 
-  const types = getTypes();
+  const types = getTypes()
 
   return (
     <div>
@@ -21,5 +21,5 @@ export default function DetailCard({ id, pokemon }) {
       <p>ID: {id}</p>
       <div>Types: {<ItemsList>{types}</ItemsList>}</div>
     </div>
-  );
+  )
 }

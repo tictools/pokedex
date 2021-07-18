@@ -1,11 +1,11 @@
-import React from "react";
-import Button from "../Button/Button";
+import React from 'react'
+import Button from '../Button/Button'
 
-export default function ButtonBar({
+export default function ButtonBar ({
   handlePrevious,
   handleNext,
   status,
-  page,
+  page
 }) {
   return (
     <div>
@@ -17,5 +17,5 @@ export default function ButtonBar({
       <p>{page + 1}</p>
       <Button label="Next" handleClick={handleNext} status={status.next} />
     </div>
-  );
+  )
 }

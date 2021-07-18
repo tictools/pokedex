@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React, { useState } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import PokemonList from "../pages/PokemonList/PokemonList";
-import { PokemonDetailWithRouter as PokemonDetail } from "../pages/PokemonDetail/PokemonDetail";
+import PokemonList from '../pages/PokemonList/PokemonList'
+import { PokemonDetailWithRouter as PokemonDetail } from '../pages/PokemonDetail/PokemonDetail'
 
-import { PAGINATION } from "../common/constants";
-import styles from "./App.css";
+import { PAGINATION } from '../common/constants'
+import styles from './App.css'
 
 export const App = () => {
-  const [page, setPage] = useState(PAGINATION.INITIAL_VALUE);
+  const [page, setPage] = useState(PAGINATION.INITIAL_VALUE)
 
   const handleChangePage = (value) => {
-    setPage(value);
-  };
+    setPage(value)
+  }
 
   return (
     <div className={styles.reset}>
@@ -30,5 +30,5 @@ export const App = () => {
         </Router>
       </main>
     </div>
-  );
-};
+  )
+}

@@ -1,8 +1,8 @@
-import React from "react";
-import styles from "./FilterBar.css";
+import React from 'react'
+import styles from './FilterBar.css'
 
-export default function FilterBar({ handleFilter }) {
-  const handleInputChange = (event) => handleFilter(event.target.value);
+export default function FilterBar ({ handleFilter }) {
+  const handleInputChange = (event) => handleFilter(event.target.value)
 
   return (
     <div className={styles.container}>
@@ -14,5 +14,5 @@ export default function FilterBar({ handleFilter }) {
         onChange={handleInputChange}
       />
     </div>
-  );
+  )
 }
