@@ -20,7 +20,7 @@
 .back__link {
   align-items:center;
   border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   color: rgb(0, 0, 0, 0.75);
   cursor: pointer;
   display: flex;
@@ -30,4 +30,11 @@
   justify-content: center;
   user-select: none;
   width: 150px;
+  text-decoration: none;
+  background-color: rgba(0,0,0,.05);
+  outline: none;
+}
+
+.back__link:hover {
+  background-color: rgba(0,0,0,.1);
 }

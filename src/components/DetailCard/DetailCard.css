@@ -17,11 +17,12 @@
 }
 
 .detail__image {
-  background-color: rgba(0,0,0,.05);
+  background-color: rgb(250,250,250);
   border-radius: 10px;
   box-sizing: border-box;
-  padding: 1rem;
+  padding: 1.5rem;
   width: 48%;
+  box-shadow: inset 0px 0px 15px 0px rgba(0,0,0,0.25);
 }
 
 .detail__info {
