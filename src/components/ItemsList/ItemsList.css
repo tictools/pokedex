@@ -5,15 +5,13 @@
   padding: 0;
 }
 
-.list {
-  align-items: center;
-  box-sizing: border-box;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  list-style-type: none;
-  margin: 1rem 0;
+.grid__list {
   padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 85px;
+  grid-auto-flow: row;
+  gap: 20px;
 }
 
 .list--empty {
