@@ -27,7 +27,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'app.[contenthash].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
   },
   module: {
     rules: [babelRules, cssRules]
@@ -40,6 +41,11 @@ module.exports = {
     })
   ],
   devServer: {
-    contentBase: './dist'
+    // contentBase: './dist',
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 8080,
+    hot: true,
+    historyApiFallback: true
   }
 }
