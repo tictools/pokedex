@@ -10,6 +10,6 @@ module.exports = {
     '.+\\.(js?)$': 'babel-jest',
     '.+\\.(css)$': '<rootDir>/node_modules/jest-css-modules-transform'
   },
-  rootDir: './../',
+  rootDir: './..',
   verbose: true
 }
