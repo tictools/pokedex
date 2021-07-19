@@ -41,21 +41,15 @@ export default function PokemonList ({ page, handleChangePage }) {
     <section className={styles.wrapper}>
       <div className={styles.container}>
         <h2 className={styles.header}>Pokemon List</h2>
-      {loading
-        ? <Loader />
-        : (
-          <>
-          <FilterBar handleFilter={handleFilterChange} />
-          <ItemsList>{formattedPokemons}</ItemsList>
-            </>
-          )}
-          </div>
-          {!loading && <ButtonBar
-            handlePrevious={handlePrevious}
-            handleNext={handleNext}
-            status={pageStatus}
-            page={page}
-            />}
+        <FilterBar handleFilter={handleFilterChange} />
+      { loading ? <Loader label='list'/> : <ItemsList>{formattedPokemons}</ItemsList> }
+      </div>
+      <ButtonBar
+        handlePrevious={handlePrevious}
+        handleNext={handleNext}
+        status={pageStatus}
+        page={page}
+      />
     </section>
   )
 }

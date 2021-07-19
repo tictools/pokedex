@@ -2,6 +2,8 @@ import React from 'react'
 import ExternalImage from '../ExternalImage/ExternalImage'
 import ItemsList from '../ItemsList/ItemsList'
 
+import styles from './DetailCard.css'
+
 export default function DetailCard ({ id, pokemon }) {
   const getTypes = () =>
     pokemon &&
@@ -11,15 +13,21 @@ export default function DetailCard ({ id, pokemon }) {
   const types = getTypes()
 
   return (
-    <div>
-      <h2>{pokemon.name}</h2>
-      <ExternalImage
-        src={pokemon.sprites.other.dream_world.front_default}
-        alt={pokemon.name}
-      />
-      <p>Number of moves: {pokemon.moves.length}</p>
-      <p>ID: {id}</p>
-      <div>Types: {<ItemsList>{types}</ItemsList>}</div>
+    <div className={styles.detail__wrapper}>
+      <h2 className={styles.detail__header}>{pokemon.name}</h2>
+      <div className={styles.detail__container}>
+        <div className={styles.detail__image}>
+          <ExternalImage
+            src={pokemon.sprites.other.dream_world.front_default}
+            alt={pokemon.name}
+          />
+        </div>
+        <div className={styles.detail__info}>
+          <p>ID: {id}</p>
+          <p>Number of moves: {pokemon.moves.length}</p>
+          <div>Types: {<ItemsList>{types}</ItemsList>}</div>
+        </div>
+      </div>
     </div>
   )
 }

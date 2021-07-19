@@ -1,0 +1,29 @@
+.detail__wrapper{
+  width: 100%;
+}
+
+.detail__header {
+  border-bottom: 1px dotted rgba(0,0,0,.5);
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.detail__container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.detail__image {
+  background-color: rgba(0,0,0,.05);
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 1rem;
+  width: 48%;
+}
+
+.detail__info {
+  width: 48%;
+}

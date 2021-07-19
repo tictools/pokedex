@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Loader from '../Loader/Loader'
 
+import styles from './ExternalImage.css'
+
 export default function ExternalImage ({ src, alt }) {
   const [loadingImg, setLoadingImg] = useState(true)
 
@@ -10,8 +12,8 @@ export default function ExternalImage ({ src, alt }) {
 
   return (
     <>
-      <img src={src} onLoad={onLoadImage} alt={alt} />
-      {loadingImg && <Loader />}
+      <img className={styles.image}src={src} onLoad={onLoadImage} alt={alt} />
+      {loadingImg && <Loader label='image'/>}
     </>
   )
 }
